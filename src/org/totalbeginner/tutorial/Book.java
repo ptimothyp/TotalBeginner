@@ -2,8 +2,9 @@ package org.totalbeginner.tutorial;
 
 public class Book {
 
-	public String author;
-	public String title;
+	String author;
+	String title;
+	private Person person;
 
 	public Book(String title) {
 		this.title = title;
@@ -20,6 +21,15 @@ public class Book {
 
 	public String getTitle() {
 		return title;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+		
+	}
+
+	public Person getPerson() {
+		return this.person;
 	}
 
 }
