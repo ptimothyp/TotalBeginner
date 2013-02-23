@@ -1,7 +1,6 @@
 package org.totalbeginner.tutorial;
 
 public class Book {
-
 	String author;
 	String title;
 	private Person person;

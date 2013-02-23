@@ -55,4 +55,25 @@ public class MyLibraryTest extends TestCase {
 		
 		
 	}
+	
+	public void testCheckOut() {
+		setup();
+		
+		ml.addBook(b1);
+		ml.addBook(b2);
+		ml.addPerson(p1);
+		ml.addPerson(p2);
+		
+		assertTrue("Book did not check out correctly",
+				ml.checkOut(b1, p1));
+		
+		assertEquals("Fred", b1.getPerson().getName());
+		assertFalse("Book was already check out",
+				ml.checkOut(b1, p2));
+		assertTrue("Book check in failed", ml.checkIn(b1));
+		
+		assertFalse("Book was already checked in", ml.checkIn(b1));
+		assertFalse("Book was never checked out", ml.checkIn(b2));
+		
+	}
 }
