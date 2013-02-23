@@ -19,16 +19,16 @@ public class Person {
 		this.name = name;
 	}
 
-	public int getMaxBooks() {
+	public int getMaximumBooks() {
 		return maximumBooks;
 	}
 
-	public void setMaxBooks(int maximumBooks) {
+	public void setMaximumBooks(int maximumBooks) {
 		this.maximumBooks = maximumBooks;
 	}
 	
 	public String toString() {
-		return this.getName() + " (" + this.getMaxBooks() + " books)";
+		return this.getName() + " (" + this.getMaximumBooks() + " books)";
 				
 	}
 }

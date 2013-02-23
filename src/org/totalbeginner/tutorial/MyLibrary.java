@@ -44,7 +44,8 @@ public class MyLibrary {
 	}
 
 	public boolean checkOut(Book b1, Person p1) {
-		if(b1.getPerson() == null){
+		int booksOut = this.getBooksForPerson(p1).size();
+		if((b1.getPerson() == null) && (booksOut < p1.getMaximumBooks())){
 			b1.setPerson(p1);
 			return true;
 		}
@@ -55,15 +56,30 @@ public class MyLibrary {
 	}
 
 	public boolean checkIn(Book b1) {
-		if(b1.getPerson() != null)
-		{
+		if(b1.getPerson() != null){
 			b1.setPerson(null);	
 			return true;
 		}
-		else
-		{
+		else {
 			return false;
 		}
 		
+	}
+
+	public ArrayList<Book> getBooksForPerson(Person p1) {
+		ArrayList<Book> result = new ArrayList<Book>();
+		
+		for (Book aBook : this.getBooks()) {
+			if ((aBook.getPerson() != null)
+					&& (aBook.getPerson().getName().equals(p1.getName()))) 
+			
+			
+			{
+				result.add(aBook);
+			}
+
+		}
+		
+		return result;
 	}
 }
